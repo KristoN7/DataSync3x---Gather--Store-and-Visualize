@@ -1,0 +1,35 @@
+BDiJS - indywidualny projekt końcowy - nr: 11
+
+W ramach projektu indywidualnego należy przygotować system do zbierania, przechowywania i udostępniania (wizualizacji danych) składający się z trzech aplikacji:
+
+- kontroler - główna aplikacja, która zajmuje się przechowywaniem i wymianą danych z innymi aplikacjami; umozliwia: przechowywanie danych, dodawanie (usuwanie, modyfikację) przechowywanych danych oraz zapewnia walidację przyjmowanych danych z różnych źródeł.
+
+- kolektor - aplikacja pomocnicza. Zadaniem kolektora jest: pobranie danych z zewnętrznego źródła (plik/strona/serwer), selekcja danych oraz dostosowanie formatu danych do wymogów kontrolera. Następnie przesłanie danych do kontrolera. Działania kolektora są inicjowane przez kontroler, który wysyła polecenia pobrania danych, z określonego źródła i w okreslonym zakresie.
+
+- GUI - aplikacja pomocnicza, która umożliwia użytkownikowi interakcje z systemem. GUI udostępnia narzędzia do wyboru prezentowanych danych, oraz interfejs (wykres/y i/lub tebelka/i) wizualizający dane wskazane przez użytkownika.
+
+Aplikacje składowe komunikują się ze sobą za pomocą interfejsu komunikacyjnego REST.
+
+Rodzaj danych, rodzaj źródeł (API) danych, zakres prezentacji danych oraz zakres możliwości dostosowania parametrów aplikacji poprzez GUI jest dowolny, przy zachowaniu poniższych wymagań.
+
+Wymagania indywidualne co do bazy oraz języka programowania:
+
+- Baza: MongoDB
+- Kontroler: JavaScript
+- Kolektor: JavaScript
+- GUI: Python
+
+Wymagania ogólne:
+
+- Dane wejściowe - mozna wybrać  dowolne źródła danych tak by: wybrać API, które udostępnia informacje w formie listy obiektów o przynajmniej 4 atrybutach; warto, by były to dane aktualizowane okresowo (np. pogoda, wydarzenia, kursy walut, itp.)
+- Kontroler - wykorzystuje wskazaną bazę danych do przechowywania danych.
+- Kolektor - na żadanie (REST) od kontrolera pobiera wskazane w żądaniu dane i po selekcji przesyła w formacie JSON do kontrolera.
+- GUI powinno zawierać: Nie mniej niż 2 obiekty graficzne prezentacji danych różnego rodzaju (różne wykresy lub wykres i tabela), oraz kilka (przynajmniej 2) metod wyboru danych do wyswietlania (np. rodzaj danych, zakres dat, region, wybór waluty, itp.), oraz interfejs do inicjowania pobierania danych przez kontroler oraz usuwania danych z bazy.
+- GUI nie komunikuje się bezpośrednio z kolektorem, GUI komunikuje s ię z kontrolerem, a kontroler komunikuje się z kolektorem za pomocą interfejsu REST. W przypadku danych zmiennych w czasie GUI może cyklicznie odpytywać kontroler.
+
+Ocenianie są:
+- oryginalnośc rozwiązania,
+- stopień rozbudowania aplikacji (liczba i zakres zmian parametrów),
+- estetyka i ergonomia GUI,
+- jakość i przejrzystoć kodu.
+
