@@ -25,7 +25,7 @@ Wymagania ogólne:
 - Kontroler - wykorzystuje wskazaną bazę danych do przechowywania danych.
 - Kolektor - na żadanie (REST) od kontrolera pobiera wskazane w żądaniu dane i po selekcji przesyła w formacie JSON do kontrolera.
 - GUI powinno zawierać: Nie mniej niż 2 obiekty graficzne prezentacji danych różnego rodzaju (różne wykresy lub wykres i tabela), oraz kilka (przynajmniej 2) metod wyboru danych do wyswietlania (np. rodzaj danych, zakres dat, region, wybór waluty, itp.), oraz interfejs do inicjowania pobierania danych przez kontroler oraz usuwania danych z bazy.
-- GUI nie komunikuje się bezpośrednio z kolektorem, GUI komunikuje s ię z kontrolerem, a kontroler komunikuje się z kolektorem za pomocą interfejsu REST. W przypadku danych zmiennych w czasie GUI może cyklicznie odpytywać kontroler.
+- GUI nie komunikuje się bezpośrednio z kolektorem, GUI komunikuje się z kontrolerem, a kontroler komunikuje się z kolektorem za pomocą interfejsu REST. W przypadku danych zmiennych w czasie GUI może cyklicznie odpytywać kontroler.
 
 Ocenianie są:
 - oryginalnośc rozwiązania,
