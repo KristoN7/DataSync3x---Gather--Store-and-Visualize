@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Game 1",
+    "players": 123456,
+    "price": 19.99,
+    "discount": 20
+  },
+  {
+    "name": "Game 2",
+    "players": 98765,
+    "price": 29.99,
+    "discount": 0
+  }
+]
