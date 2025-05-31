@@ -25,9 +25,12 @@ def load_games():
 app.layout = dbc.Container([
     html.H1("Steam Games Dashboard", className="my-4 text-center"),
 
-    dbc.Button("🔄 Zbierz dane z kolektora", id="collect-button", color="primary", className="mb-3"),
+    dbc.Row([
+        dbc.Button("🔄 Zbierz dane z kolektora", id="collect-button", color="primary", className="mb-3"),
+        dbc.Button("🗑️ Usuń wszystkie gry", id="delete-button", color="danger", className="mb-3 ms-2"),
+    ]),
     dbc.Alert(id="alert", is_open=False),
-
+    dcc.Store(id='game-store'),
     dash_table.DataTable(
     id='games-table',
     columns=[
@@ -52,8 +55,8 @@ app.layout = dbc.Container([
     # Suwaki do filtrowania
     html.Div([
         html.Label("Minimalna liczba graczy:"),
-        dcc.Slider(id='min-players', min=0, max=1000000, step=50000, value=0,
-                   marks={0: '0', 500000: '500k', 1000000: '1M'}),
+        dcc.Slider(id='min-players', min=0, max=100_000_000, step=5_000_000, value=0,
+                   marks={0: '0', 50_000_000: '50M', 100_000_000: '100M'}),
 
         html.Label("Maksymalna cena:"),
         dcc.Slider(id='max-price', min=0, max=100, step=1, value=100,
@@ -66,46 +69,52 @@ app.layout = dbc.Container([
 ], fluid=True)
 
 @app.callback(
+    Output("game-store", "data"),
     Output("games-table", "data"),
     Output("alert", "children"),
     Output("alert", "color"),
     Output("alert", "is_open"),
     Input("collect-button", "n_clicks"),
-    Input("games-table", "id")
+    Input("delete-button", "n_clicks"),
+    prevent_initial_call=True
 )
-def update_table(n_clicks, table_id):
+def update_table(collect_clicks, delete_clicks):
     ctx = callback_context
     if not ctx.triggered:
-        # wywołanie na starcie - załaduj dane
-        df = load_games()
-        return df.to_dict('records'), "", "", False
-    else:
-        trigger_id = ctx.triggered[0]['prop_id'].split('.')[0]
+        raise dash.exceptions.PreventUpdate
+
+    trigger_id = ctx.triggered[0]['prop_id'].split('.')[0]
+
+    try:
         if trigger_id == 'collect-button':
-            try:
-                requests.post(COLLECTOR_API)
-                df = load_games()
-                if df.empty:
-                    raise Exception("Brak danych z API")
-                return df.to_dict('records'), "Dane zostały zaktualizowane", "success", True
-            except Exception as e:
-                return [], f"Błąd: {str(e)}", "danger", True
-        else:
+            requests.post(COLLECTOR_API)
             df = load_games()
-            return df.to_dict('records'), "", "", False
+            return df.to_dict('records'), df.to_dict('records'), "Dane zostały zaktualizowane", "success", True
+
+        elif trigger_id == 'delete-button':
+            res = requests.delete(CONTROLLER_API)
+            if res.status_code == 200:
+                return [], [], "Wszystkie dane zostały usunięte", "warning", True
+            else:
+                return [], [], "Wszystkie dane zostały usunięte", "warning", True
+
+    except Exception as e:
+        return [], f"Błąd: {str(e)}", "danger", True
+
 
 @app.callback(
     Output("price-vs-players", "figure"),
     Output("discount-histogram", "figure"),
+    Input("game-store", "data"),
     Input("min-players", "value"),
     Input("max-price", "value")
 )
-def update_graphs(min_players, max_price):
-    df = load_games()
-    if df.empty:
+def update_graphs(data, min_players, max_price):
+    if not data:
         empty_fig = px.scatter(title="Brak danych")
         return empty_fig, empty_fig
 
+    df = pd.DataFrame(data)
     filtered = df[(df['players'] >= min_players) & (df['price'] <= max_price)]
 
     fig1 = px.scatter(filtered, x='players', y='price', hover_data=['name'], title="Cena vs Liczba Graczy")

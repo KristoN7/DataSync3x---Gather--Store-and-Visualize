@@ -21,11 +21,10 @@ async function fetchTopGames() {
 }
 
 function parsePlayers(ownersString) {
-  // Przykład: "10,000,000 .. 20,000,000"
-  const match = ownersString.match(/([\d,]+)/); // dopasuj pierwszy numer
+  //"10,000,000 .. 20,000,000"
+  const match = ownersString.match(/([\d,]+)/);
   if (!match) return 0;
 
-  // usuń przecinki i zamień na liczbę
   return parseInt(match[1].replace(/,/g, ''), 10);
 }
 

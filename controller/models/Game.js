@@ -1,4 +1,4 @@
-// models/Game.js
+// Struktura pojedynczej gry w bazie danych
 const mongoose = require('mongoose');
 
 const GameSchema = new mongoose.Schema({
