@@ -1,0 +1,902 @@
+[
+  {
+    "name": "Counter-Strike",
+    "players": 10000000,
+    "price": 9.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Ricochet",
+    "players": 5000000,
+    "price": 4.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Half-Life",
+    "players": 10000000,
+    "price": 9.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Half-Life 2",
+    "players": 10000000,
+    "price": 9.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Counter-Strike: Source",
+    "players": 10000000,
+    "price": 9.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Half-Life 2: Deathmatch",
+    "players": 10000000,
+    "price": 3.99,
+    "discount": "80",
+    "paymentModel": "Paid",
+    "onSale": "Tak",
+    "category": "Unknown"
+  },
+  {
+    "name": "Half-Life 2: Lost Coast",
+    "players": 20000000,
+    "price": 3.99,
+    "discount": "80",
+    "paymentModel": "Paid",
+    "onSale": "Tak",
+    "category": "Unknown"
+  },
+  {
+    "name": "Team Fortress 2",
+    "players": 20000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Left 4 Dead 2",
+    "players": 50000000,
+    "price": 9.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Portal 2",
+    "players": 10000000,
+    "price": 1.99,
+    "discount": "80",
+    "paymentModel": "Paid",
+    "onSale": "Tak",
+    "category": "Unknown"
+  },
+  {
+    "name": "Counter-Strike: Global Offensive",
+    "players": 100000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Garry's Mod",
+    "players": 20000000,
+    "price": 5.99,
+    "discount": "40",
+    "paymentModel": "Paid",
+    "onSale": "Tak",
+    "category": "Unknown"
+  },
+  {
+    "name": "Sid Meier's Civilization V",
+    "players": 10000000,
+    "price": 29.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "The Tiny Bang Story",
+    "players": 5000000,
+    "price": 4.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Terraria",
+    "players": 20000000,
+    "price": 9.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Arma 3",
+    "players": 10000000,
+    "price": 29.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Project Zomboid",
+    "players": 10000000,
+    "price": 19.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Castle Crashers",
+    "players": 5000000,
+    "price": 14.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "PAYDAY 2",
+    "players": 20000000,
+    "price": 9.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Grim Dawn",
+    "players": 10000000,
+    "price": 3.74,
+    "discount": "85",
+    "paymentModel": "Paid",
+    "onSale": "Tak",
+    "category": "Unknown"
+  },
+  {
+    "name": "DayZ",
+    "players": 5000000,
+    "price": 49.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Euro Truck Simulator 2",
+    "players": 10000000,
+    "price": 19.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Heroes & Generals",
+    "players": 10000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Warframe",
+    "players": 10000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "War Thunder",
+    "players": 20000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Path of Exile",
+    "players": 20000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Dying Light",
+    "players": 10000000,
+    "price": 8.99,
+    "discount": "70",
+    "paymentModel": "Paid",
+    "onSale": "Tak",
+    "category": "Unknown"
+  },
+  {
+    "name": "The Forest",
+    "players": 20000000,
+    "price": 19.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "The Binding of Isaac: Rebirth",
+    "players": 10000000,
+    "price": 14.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "7 Days to Die",
+    "players": 10000000,
+    "price": 44.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Rust",
+    "players": 20000000,
+    "price": 39.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Rocket League",
+    "players": 10000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Cities: Skylines",
+    "players": 10000000,
+    "price": 29.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Mount & Blade II: Bannerlord",
+    "players": 10000000,
+    "price": 49.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Grand Theft Auto V Legacy",
+    "players": 50000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Serena",
+    "players": 10000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "No Man's Sky",
+    "players": 5000000,
+    "price": 23.99,
+    "discount": "60",
+    "paymentModel": "Paid",
+    "onSale": "Tak",
+    "category": "Unknown"
+  },
+  {
+    "name": "Sid Meier’s Civilization VI",
+    "players": 10000000,
+    "price": 59.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Brawlhalla",
+    "players": 20000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "The Witcher 3: Wild Hunt",
+    "players": 10000000,
+    "price": 39.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Robocraft",
+    "players": 10000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Trove",
+    "players": 10000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Unturned",
+    "players": 50000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Geometry Dash",
+    "players": 5000000,
+    "price": 4.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Don't Starve Together",
+    "players": 20000000,
+    "price": 14.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "ARK: Survival Evolved",
+    "players": 20000000,
+    "price": 14.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Tom Clancy's Rainbow Six Siege",
+    "players": 20000000,
+    "price": 7.99,
+    "discount": "60",
+    "paymentModel": "Paid",
+    "onSale": "Tak",
+    "category": "Unknown"
+  },
+  {
+    "name": "Hollow Knight",
+    "players": 10000000,
+    "price": 14.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Fallout 4",
+    "players": 10000000,
+    "price": 19.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Dead by Daylight",
+    "players": 20000000,
+    "price": 19.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "SMITE",
+    "players": 10000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Stardew Valley",
+    "players": 20000000,
+    "price": 14.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Street Warriors Online",
+    "players": 10000000,
+    "price": 1.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Wallpaper Engine",
+    "players": 20000000,
+    "price": 4.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Z1 Battle Royale",
+    "players": 10000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "VRChat",
+    "players": 10000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Paladins",
+    "players": 10000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "World of Tanks Blitz",
+    "players": 10000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Human Fall Flat",
+    "players": 10000000,
+    "price": 19.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Satisfactory",
+    "players": 5000000,
+    "price": 39.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Life is Strange 2",
+    "players": 10000000,
+    "price": 31.96,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Black Squad",
+    "players": 10000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "World of Warships",
+    "players": 10000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "HELLDIVERS 2",
+    "players": 50000000,
+    "price": 39.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "PUBG: BATTLEGROUNDS",
+    "players": 50000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Monster Hunter: World",
+    "players": 10000000,
+    "price": 29.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Hunt: Showdown 1896",
+    "players": 10000000,
+    "price": 29.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Risk of Rain 2",
+    "players": 5000000,
+    "price": 24.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Raft",
+    "players": 10000000,
+    "price": 19.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Phasmophobia",
+    "players": 10000000,
+    "price": 19.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Ring of Elysium",
+    "players": 10000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Sekiro: Shadows Die Twice - GOTY Edition",
+    "players": 10000000,
+    "price": 29.99,
+    "discount": "50",
+    "paymentModel": "Paid",
+    "onSale": "Tak",
+    "category": "Unknown"
+  },
+  {
+    "name": "Valheim",
+    "players": 20000000,
+    "price": 19.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Last Epoch",
+    "players": 20000000,
+    "price": 34.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Grand Theft Auto IV: Complete Edition",
+    "players": 20000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Among Us",
+    "players": 20000000,
+    "price": 2.99,
+    "discount": "40",
+    "paymentModel": "Paid",
+    "onSale": "Tak",
+    "category": "Unknown"
+  },
+  {
+    "name": "Hogwarts Legacy",
+    "players": 10000000,
+    "price": 59.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Dota Underlords",
+    "players": 5000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "New World: Aeternum",
+    "players": 50000000,
+    "price": 79.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Destiny 2",
+    "players": 20000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Baldur's Gate 3",
+    "players": 20000000,
+    "price": 59.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "NBA 2K20",
+    "players": 5000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Cyberpunk 2077",
+    "players": 20000000,
+    "price": 59.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Fall Guys: Ultimate Knockout",
+    "players": 20000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Apex Legends",
+    "players": 50000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Red Dead Redemption 2",
+    "players": 10000000,
+    "price": 14.99,
+    "discount": "75",
+    "paymentModel": "Paid",
+    "onSale": "Tak",
+    "category": "Unknown"
+  },
+  {
+    "name": "NARAKA: BLADEPOINT",
+    "players": 20000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "The Sims 4",
+    "players": 10000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Battlefield V",
+    "players": 5000000,
+    "price": 49.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Halo Infinite",
+    "players": 10000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "ELDEN RING",
+    "players": 20000000,
+    "price": 59.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Sons Of The Forest",
+    "players": 10000000,
+    "price": 29.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "鬼谷八荒 Tale of Immortal",
+    "players": 10000000,
+    "price": 19.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Battlefield 2042",
+    "players": 10000000,
+    "price": 59.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Lost Ark",
+    "players": 50000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Palworld",
+    "players": 50000000,
+    "price": 29.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "EA SPORTS FIFA 23",
+    "players": 5000000,
+    "price": 0,
+    "discount": "0",
+    "paymentModel": "Free",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Call of Duty: Modern Warfare II",
+    "players": 50000000,
+    "price": 38.49,
+    "discount": "45",
+    "paymentModel": "Paid",
+    "onSale": "Tak",
+    "category": "Unknown"
+  },
+  {
+    "name": "Lethal Company",
+    "players": 10000000,
+    "price": 9.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  },
+  {
+    "name": "Black Myth: Wukong",
+    "players": 50000000,
+    "price": 59.99,
+    "discount": "0",
+    "paymentModel": "Paid",
+    "onSale": "Nie",
+    "category": "Unknown"
+  }
+]

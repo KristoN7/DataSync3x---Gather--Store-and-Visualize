@@ -3,6 +3,7 @@ from dash import html, dcc, dash_table, Output, Input, State, callback_context
 import dash_bootstrap_components as dbc
 import pandas as pd
 import requests
+import plotly.graph_objects as go
 import plotly.express as px
 
 # Adresy backendów
@@ -30,29 +31,73 @@ app.layout = dbc.Container([
         dbc.Button("🗑️ Usuń wszystkie gry", id="delete-button", color="danger", className="mb-3 ms-2"),
     ]),
     dbc.Alert(id="alert", is_open=False),
-    dcc.Store(id='game-store'),
-    dash_table.DataTable(
-    id='games-table',
-    columns=[
-        {'name': 'Nazwa', 'id': 'name', 'presentation': 'markdown'},
-        {'name': 'Gracze', 'id': 'players', 'type': 'numeric'},
-        {'name': 'Cena (USD)', 'id': 'price', 'type': 'numeric'},
-        {'name': 'Zniżka (%)', 'id': 'discount', 'type': 'numeric'}
-    ],
-    data=[],
-    style_table={'overflowX': 'auto', 'maxHeight': '600px', 'overflowY': 'auto'},
-    style_cell={
-        'minWidth': '120px', 'width': '120px', 'maxWidth': '120px',
-        'whiteSpace': 'normal', 'padding': '5px'
-    },
-    style_header={'backgroundColor': 'rgb(230, 230, 230)', 'fontWeight': 'bold'},
-    page_size=10,
-    sort_action="native",
-    fixed_rows={'headers': True}
+    
+    html.Div([
+        dbc.Row([
+            dbc.Col([
+                html.Label("Model płatności:"),
+                dcc.Dropdown(
+                    id='payment-filter',
+                    options=[
+                        {"label": "Wszystkie", "value": "all"},
+                        {"label": "Free", "value": "Free"},
+                        {"label": "Paid", "value": "Paid"}
+                    ],
+                    value='all',
+                    clearable=False
+                )
+            ]),
+            dbc.Col([
+                html.Label("Zniżka aktywna:"),
+                dcc.Dropdown(
+                    id='sale-filter',
+                    options=[
+                        {"label": "Wszystkie", "value": "all"},
+                        {"label": "Tak", "value": "Tak"},
+                        {"label": "Nie", "value": "Nie"}
+                    ],
+                    value='all',
+                    clearable=False
+                )
+            ]),
+        ])
+    ], style={"marginBottom": 20}),
+
+    html.Label("Kategoria gry (na podstawie recenzji i popularności):"),
+    dcc.Dropdown(
+        id="category-dropdown",
+        options=[
+            {"label": "Wszystkie", "value": "all"},
+            {"label": "Popularna", "value": "Popularna"},
+            {"label": "Dobra", "value": "Dobra"},
+            {"label": "Średnia", "value": "Średnia"},
+            {"label": "Słaba", "value": "Słaba"},
+        ],
+        value="all",
+        clearable=False,
+        style={"marginBottom": "20px"}
     ),
 
+    dash_table.DataTable(
+        id='games-table',
+        columns=[
+            {'name': 'Nazwa', 'id': 'name', 'presentation': 'markdown'},
+            {'name': 'Gracze', 'id': 'players', 'type': 'numeric'},
+            {'name': 'Cena (USD)', 'id': 'price', 'type': 'numeric'},
+            {'name': 'Zniżka (%)', 'id': 'discount', 'type': 'numeric'}
+        ],
+        data=[],
+        style_table={'overflowX': 'auto', 'maxHeight': '600px', 'overflowY': 'auto'},
+        style_cell={
+            'minWidth': '120px', 'width': '120px', 'maxWidth': '120px',
+            'whiteSpace': 'normal', 'padding': '5px'
+        },
+        style_header={'backgroundColor': 'rgb(230, 230, 230)', 'fontWeight': 'bold'},
+        page_size=10,
+        sort_action="native",
+        fixed_rows={'headers': True}
+    ),
 
-    # Suwaki do filtrowania
     html.Div([
         html.Label("Minimalna liczba graczy:"),
         dcc.Slider(id='min-players', min=0, max=100_000_000, step=5_000_000, value=0,
@@ -63,64 +108,74 @@ app.layout = dbc.Container([
                    marks={0: '$0', 50: '$50', 100: '$100'}),
     ], style={'marginTop': 20, 'marginBottom': 20}),
 
-    # Wykresy
     dcc.Graph(id='price-vs-players'),
     dcc.Graph(id='discount-histogram'),
 ], fluid=True)
 
 @app.callback(
-    Output("game-store", "data"),
     Output("games-table", "data"),
+    Output("price-vs-players", "figure"),
+    Output("discount-histogram", "figure"),
     Output("alert", "children"),
     Output("alert", "color"),
     Output("alert", "is_open"),
     Input("collect-button", "n_clicks"),
     Input("delete-button", "n_clicks"),
+    Input("min-players", "value"),
+    Input("max-price", "value"),
+    Input("payment-filter", "value"),
+    Input("sale-filter", "value"),
+    Input("category-dropdown", "value"),
     prevent_initial_call=True
 )
-def update_table(collect_clicks, delete_clicks):
+def update_dashboard(n_collect, n_delete, min_players, max_price, payment_filter, sale_filter, category_value):
     ctx = callback_context
-    if not ctx.triggered:
-        raise dash.exceptions.PreventUpdate
-
-    trigger_id = ctx.triggered[0]['prop_id'].split('.')[0]
+    trigger = ctx.triggered[0]['prop_id'].split('.')[0] if ctx.triggered else None
 
     try:
-        if trigger_id == 'collect-button':
+        if trigger == "collect-button":
             requests.post(COLLECTOR_API)
-            df = load_games()
-            return df.to_dict('records'), df.to_dict('records'), "Dane zostały zaktualizowane", "success", True
-
-        elif trigger_id == 'delete-button':
+            alert_msg = "Dane zostały zaktualizowane"
+            alert_color = "success"
+        elif trigger == "delete-button":
             res = requests.delete(CONTROLLER_API)
-            if res.status_code == 200:
-                return [], [], "Wszystkie dane zostały usunięte", "warning", True
+            print(f"DELETE status: {res.status_code}, body: {res.text}")
+            if res.status_code in [200, 204]:
+                empty_fig = go.Figure(layout_title_text="Brak danych")
+                return [], empty_fig, empty_fig, "Wszystkie dane zostały usunięte", "warning", True
             else:
-                return [], [], "Wszystkie dane zostały usunięte", "warning", True
+                raise Exception("Błąd podczas usuwania danych")
+        else:
+            alert_msg = ""
+            alert_color = ""
+
+        df = load_games()
+        if 'category' not in df.columns:
+            raise Exception("Brakuje kolumny 'category' w danych")
+        if df.empty:
+            empty_fig = go.Figure(layout_title_text="Brak danych")
+            return [], empty_fig, empty_fig, "Brak danych do wyświetlenia", "warning", True
+
+        # Filtrowanie
+        filtered = df[
+            (df['players'] >= min_players) &
+            (df['price'] <= max_price)
+        ]
+        if payment_filter != "all":
+            filtered = filtered[filtered["paymentModel"] == payment_filter]
+        if sale_filter != "all":
+            filtered = filtered[filtered["onSale"] == sale_filter]
+        if category_value != "all" and "category" in filtered.columns:
+            filtered = filtered[filtered["category"] == category_value]
+        
+        fig1 = px.scatter(filtered, x="players", y="price", hover_data=["name"], title="Cena vs Liczba Graczy")
+        fig2 = px.histogram(filtered, x="discount", nbins=10, title="Histogram Zniżek (%)")
+
+        return filtered.to_dict("records"), fig1, fig2, alert_msg, alert_color, bool(alert_msg)
 
     except Exception as e:
-        return [], f"Błąd: {str(e)}", "danger", True
-
-
-@app.callback(
-    Output("price-vs-players", "figure"),
-    Output("discount-histogram", "figure"),
-    Input("game-store", "data"),
-    Input("min-players", "value"),
-    Input("max-price", "value")
-)
-def update_graphs(data, min_players, max_price):
-    if not data:
-        empty_fig = px.scatter(title="Brak danych")
-        return empty_fig, empty_fig
-
-    df = pd.DataFrame(data)
-    filtered = df[(df['players'] >= min_players) & (df['price'] <= max_price)]
-
-    fig1 = px.scatter(filtered, x='players', y='price', hover_data=['name'], title="Cena vs Liczba Graczy")
-    fig2 = px.histogram(filtered, x='discount', nbins=10, title="Histogram Zniżek (%)")
-
-    return fig1, fig2
+        empty_fig = go.Figure(layout_title_text="Błąd")
+        return [], empty_fig, empty_fig, f"Błąd: {str(e)}", "danger", True
 
 if __name__ == "__main__":
     app.run(debug=True)

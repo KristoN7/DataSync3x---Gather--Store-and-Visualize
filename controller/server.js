@@ -51,3 +51,14 @@ const PORT = 3001;
 app.listen(PORT, () => {
   console.log(`Kontroler działa na porcie ${PORT}`);
 });
+
+// Endpoint do usuwania danych (dla GUI)
+app.delete('/api/games', async (req, res) => {
+  try {
+    await collection.deleteMany({});
+    res.status(200).json({ message: 'Wszystkie gry usunięte' });
+  } catch (err) {
+    console.error('Błąd usuwania danych:', err);
+    res.status(500).send('Błąd podczas usuwania danych');
+  }
+});

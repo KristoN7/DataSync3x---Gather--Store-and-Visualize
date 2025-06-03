@@ -34,7 +34,7 @@ router.post('/', async (req, res) => {
 // DELETE all
 router.delete('/', async (req, res) => {
     await Game.deleteMany({});
-    res.json({ message: "Wszystkie gry usunięte" });
+    res.status(200).json({ message: "Wszystkie gry usunięte" });
 });
 
 module.exports = router;
